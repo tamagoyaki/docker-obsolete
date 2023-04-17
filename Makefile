@@ -1,9 +1,9 @@
 # samba's case for example
-NAME = ubuntu
+NAME = samba
 DOCKERFILE = $(NAME).dockerfile
 IMAGE= $(NAME)-i
 CONTAINER = $(NAME)-c
-#PORT = -p 22:22/tcp
+PORT = -p 137:137/udp -p 138:138/udp -p 139:139/tcp -p 445:445/tcp
 
 help:
 	@echo ''
@@ -24,7 +24,7 @@ $(IMAGE):
 
 # run
 $(CONTAINER):
-	docker run --name $(CONTAINER) -it -d $(PORT) $(IMAGE)
+	docker run --name $(CONTAINER) -d -it $(PORT) $(IMAGE)
 
 # play with container
 start:
