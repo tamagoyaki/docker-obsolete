@@ -1,6 +1,6 @@
-# samba's case for example
-NAME = apache
-DOCKERFILE = $(NAME).dockerfile
+# django's case for example
+NAME = django
+DOCKERFILE = apache.dockerfile
 IMAGE= $(NAME)-i
 CONTAINER = $(NAME)-c
 PORT = -p 80:80/tcp
