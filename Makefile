@@ -1,9 +1,9 @@
 # samba's case for example
-NAME = ubuntu
+NAME = apache
 DOCKERFILE = $(NAME).dockerfile
 IMAGE= $(NAME)-i
 CONTAINER = $(NAME)-c
-#PORT = -p 22:22/tcp
+PORT = -p 80:80/tcp
 
 help:
 	@echo ''

@@ -21,6 +21,7 @@ run apt-get install -y git
 run apt-get install -y sudo
 run apt-get install -y tzdata
 run apt-get install -y iproute2
+run apt-get install -y apache2
 
 #
 # In this case, the processes is like these.
@@ -30,4 +31,15 @@ run apt-get install -y iproute2
 #  >     1 pts/0    Ss+    0:00 bash
 #  >    28 pts/1    Ss     0:00 /bin/bash
 #  >    42 pts/1    R+     0:00 ps ax
+#
+
+#
+# start apache2
+#
+entrypoint apachectl -D FOREGROUND
+
+#
+# now you can access to "Apache2 Default Page" by below.
+#
+#    > $ w3m 172.17.0.3
 #
